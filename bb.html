@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="js/css/bootstrap.css">
+    <style>
+        form{
+            width: 500px;
+            border: 1.5px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 100px;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            margin: 50px;
+        }
+        .invalled{
+          width: 100%;
+           height: 100%;; 
+           color: red;
+           background-color: rgb(242, 125, 125);
+           padding: 15px;
+           border-radius: 10px;
+        }
+
+       
+    </style>
+</head>
+<body>
+  
+    <h1>profile information</h1>
+  <form class="row g-3"  method="post" action="berbara.php">
+    <div id="message"></div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail4" name="mail">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Password</label>
+    <input type="password" class="form-control" id="inputPassword4"name="pass">
+  </div>
+ 
+  
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary" id="sub">Sign in</button>
+  </div>
+  <div><p>barbara@gmail.com/1234</p>
+  <p>admin@gmail.com/123456</p></div>
+</form>
+
+</body>
+<script src="js/bootstrap.js"></script>
+<script>
+  var sub = document.getElementById("sub"); 
+  sub.addEventListener("click" , function (e) {
+
+  var email = document.getElementById("inputEmail4").value; 
+  var pass = document.getElementById("inputPassword4").value; 
+  if(email=="barbara@gmail.com"&&pass=="1234"){
+ window.location.href ="berbara.php"
+  }else if (email=="admin@gmail.com"&&pass=="123456"){
+window.location.href ="berbara.php"
+  }
+  else{
+    e.preventDefault()
+var x=document.getElementById("message")  ; 
+x.innerHTML=`<p class="invalled">wrong user or pass</p>`
+  }
+})
+
+</script>
+</html>
